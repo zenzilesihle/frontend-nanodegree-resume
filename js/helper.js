@@ -59,13 +59,21 @@ var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 
+var googleCalendar = '<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%2328754E&amp;src=oak835ud04rgvaesdd5918n65s%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Africa%2FJohannesburg" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>'
+var cartoonBack = '<button type="button" onclick="myFunction()">Change Background</button>'
+
+
+ var st = '<input type="button" value="Start" onclick="play();" />';
+ var sp = '<input type="button" value="Stop" onclick="stop();" />';
+ var re = '<input type="button" value="Rewind" onclick="rewind();" />';
+
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName() || function(){};
-    $('#name').html(iName);  
+    $('#name').html(iName);
   });
 });
 

@@ -13,24 +13,40 @@ $("#header").prepend(formattedName);
 /*******MAIN********/
 //function internationalized
 //
+var name = formattedName + " "+formattedRole;
 
-function inName(name)
+//inName(headName);
+$("#topContacts").append(cartoonBack);
+$("#videoBtn").append(st);
+$("#videoBtn").append(sp);
+$("#videoBtn").append(re);
+
+
+function play()
 {
-  var nm = [];
-  nm = name.split(" ");
 
-  var firstname = nm[0].toLowerCase();
-
-  var surname = nm[1].toUpperCase();
-
-  var firstLetter = firstname.slice(0, 1).toUpperCase()+firstname.slice(1) + " "+ surname;
-
-
-  console.log(firstLetter);
+    document.demo.Play();
 
 }
-inName(headName);
-$("#main").append(internationalizeButton);
+function stop()
+{
+  //document.getElementById(stop()).stop();
+    document.demo.StopPlay();
+
+}
+
+//document.getElementById('demo').stop();
+
+function rewind()
+{
+
+  document.demo.Rewind();
+}
+function myFunction() {
+    document.body.style.backgroundColor = "#FFFF99";
+    //document.body.style.backgroundImage = "url('images/back1.jpg')";
+    alert("Background Changed");
+}
 var education ={};
 var projects ={};
 /********BIO***********/
@@ -121,6 +137,19 @@ function displayWork()
 displayWork();
 
 $("#mapDiv").append(googleMap);
+
+
+var myImage = document.querySelector('img');
+
+myImage.onclick = function() {
+    var mySrc = myImage.getAttribute('src');
+    if(mySrc === 'images/series.png') {
+      myImage.setAttribute ('src','images/series.png');
+    } else {
+      myImage.setAttribute ('src','images/gameofthrones.png');
+    }
+}
+//$("#mapDiv").append(myImage);
 /*******EDUCATION*********/
 education = {"schools":[{"name":"SEK Mqhayi High",
                             "city": "East London",
@@ -181,8 +210,8 @@ for(index in education.schools){
   $(".education-entry:last").append(degree);
   var dates = HTMLschoolDates.replace("%data%",education.schools[index].gradyear);
   $(".education-entry:last").append(dates);
-  var loca = HTMLschoolLocation.replace("%data%",education.schools[index].location);
-  $(".education-entry:last").append(loca);
+  //var loca = HTMLschoolLocation.replace("%data%",education.schools[index].location);
+  //$(".education-entry:last").append(loca);
 
 
   if(education.schools[index].majors.length>0)
@@ -248,9 +277,40 @@ projects.display();
 
 
 
+/*
 
 
 
+
+var text = encodeURIComponent('Housters To-Do Due: ' + self.task());
+            var startDate = moment(self.dueDate()).format('YYYYMMDD');
+            var endDate = moment(self.dueDate()).add('days', 1).format('YYYYMMDD');
+            var details = encodeURIComponent(self.task());
+            var location = encodeURIComponent(self.propertyName());
+            var googleCalendarUrl = 'http://www.google.com/calendar/event?action=TEMPLATE&text=' + text + '&dates=' + startDate + '/' + endDate + '&details=' + details + '&location=' + location;
+
+
+
+
+
+
+
+
+            function inName(name)
+            {
+              var nm = [];
+              nm = name.split(" ");
+
+              var firstname = nm[0].toLowerCase();
+
+              var surname = nm[1].toUpperCase();
+
+              var firstLetter = firstname.slice(0, 1).toUpperCase()+firstname.slice(1) + " "+ surname;
+
+
+              console.log(firstLetter);
+
+            }*/
 
 
 
